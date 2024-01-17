@@ -1,0 +1,41 @@
+body {
+    background-color:#F5F5F5
+}
+
+table {
+    table-layout: fixed;
+    color: grey;
+}
+
+tr {
+    height: 5rem;
+}
+
+.container {
+    margin-top: 2rem;
+    margin-bottom: 12rem;
+}
+
+.table>tbody>tr>td.buttons-container {
+    padding-right:5%;
+}
+
+.header-container {
+    margin-bottom: 4rem;
+}
+
+.count-header {
+    width:5%;
+    text-align: center;
+}
+
+.title-header {
+    width:95%;
+}
+
+/*.top-row {*/
+/*    & th {*/
+/*        width: 5%;*/
+/*        text-align: center;*/
+/*    }*/
+/*}*/
