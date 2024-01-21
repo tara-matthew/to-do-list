@@ -25,7 +25,8 @@ class TaskController extends Controller
 
     public function update(Task $task): RedirectResponse
     {
-        // TODO we may want a form request if for example we wanted to 'uncomplete' a task
+        // TODO we may want a form request if for example we wanted to 'uncomplete' a task.
+        // The frontend could pass through a boolean and the backend evaluates as a timestamp
         $task->update([
             'completed_at' => now(),
         ]);
