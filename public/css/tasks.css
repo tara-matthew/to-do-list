@@ -1,5 +1,5 @@
 body {
-    background-color:#F5F5F5
+    background-color: #F5F5F5;
 }
 
 table {
@@ -17,7 +17,7 @@ tr {
 }
 
 .table>tbody>tr>td.buttons-container {
-    padding-right:5%;
+    padding-right: 5%;
 }
 
 .header-container {
@@ -25,17 +25,10 @@ tr {
 }
 
 .count-header {
-    width:5%;
+    width: 5%;
     text-align: center;
 }
 
 .title-header {
-    width:95%;
+    width: 95%;
 }
-
-/*.top-row {*/
-/*    & th {*/
-/*        width: 5%;*/
-/*        text-align: center;*/
-/*    }*/
-/*}*/

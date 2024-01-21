@@ -7,14 +7,14 @@
     <td
         class="text-right buttons-container">
         <div @class(['hidden' => $task->completed_at])>
-            <form class="visible-lg-inline" action="/tasks/{{$task->id}}" method="POST">
+            <form class="visible-lg-inline" action="{{ route('tasks.update', ['task' => $task]) }}" method="POST">
                 @csrf
                 @method('PATCH')
                 <button type="submit" class="btn btn-success">
                     <span class="glyphicon glyphicon-ok"></span>
                 </button>
             </form>
-            <form class="visible-lg-inline" action="/tasks/{{$task->id}}" method="POST">
+            <form class="visible-lg-inline" action="{{ route('tasks.destroy', ['task' => $task]) }}" method="POST">
                 @csrf
                 @method('DELETE')
                 <button type="submit" class="btn btn-danger">

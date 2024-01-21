@@ -1,4 +1,4 @@
-<form action="/tasks" method="POST">
+<form action={{ route('tasks.store') }} method="POST">
     @csrf
     <div class="form-group">
         <label for="insert_task" class="hidden"></label>
