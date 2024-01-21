@@ -13,6 +13,12 @@ class TaskTest extends TestCase
 {
     use RefreshDatabase;
 
+    protected function setUp(): void
+    {
+        parent::setUp();
+        Carbon::setTestNow();
+    }
+
     public function test_it_displays_a_list_of_tasks(): void
     {
         $tasks = Task::factory(2)->create();
@@ -41,7 +47,7 @@ class TaskTest extends TestCase
         $this->assertDatabaseHas('tasks', ['id' => $task->id]);
 
         $response = $this->delete(route('tasks.destroy', $task));
-        $this->assertDatabaseMissing('tasks', ['id' => $task->id]);
+        $this->assertDatabaseHas('tasks', ['id' => $task->id, 'deleted_at' => now()]);
 
         $response->assertRedirect('/');
         $response->assertSessionHas('message', 'Task '.$task->name.' deleted successfully');
@@ -49,8 +55,6 @@ class TaskTest extends TestCase
 
     public function test_it_updates_a_task(): void
     {
-        Carbon::setTestNow();
-
         $task = Task::factory()->create();
         $this->assertDatabaseHas('tasks', ['id' => $task->id, 'completed_at' => null]);
 
