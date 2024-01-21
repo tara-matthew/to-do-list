@@ -1,4 +1,5 @@
 @props(['tasks'])
+
 <div class="panel panel-default">
     <table class="table">
         <thead>
