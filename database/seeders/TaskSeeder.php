@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\Task;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class TaskSeeder extends Seeder
@@ -12,7 +11,7 @@ class TaskSeeder extends Seeder
     {
         foreach (config('tasks') as $task) {
             Task::factory()->create([
-                'name' => $task
+                'name' => $task,
             ]);
         }
     }

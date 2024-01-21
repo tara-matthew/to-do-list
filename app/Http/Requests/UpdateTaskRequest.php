@@ -9,7 +9,7 @@ class UpdateTaskRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'is_completed' => ['required', 'boolean'] // the required rule could change depending on how we use the request
+            'is_completed' => ['required', 'boolean'], // the required rule could change depending on how we use the request
         ];
     }
 }

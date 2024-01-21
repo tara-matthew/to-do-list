@@ -7,12 +7,12 @@ use App\Http\Requests\StoreTaskRequest;
 use App\Models\Task;
 use Carbon\Carbon;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use JMac\Testing\Traits\AdditionalAssertions;
 use Tests\TestCase;
 
 class TaskTest extends TestCase
 {
     use RefreshDatabase;
+
     public function test_it_displays_a_list_of_tasks(): void
     {
         $tasks = Task::factory(2)->create();
@@ -25,14 +25,14 @@ class TaskTest extends TestCase
     public function test_it_stores_a_task(): void
     {
         $data = [
-            'name' => 'My test task'
+            'name' => 'My test task',
         ];
 
         $response = $this->post(route('tasks.store'), $data);
 
         $response->assertRedirect('/');
         $this->assertDatabaseHas('tasks', $data);
-        $response->assertSessionHas('message', 'Task My test task ' . 'created successfully');
+        $response->assertSessionHas('message', 'Task My test task '.'created successfully');
     }
 
     public function test_it_deletes_a_task(): void
@@ -44,7 +44,7 @@ class TaskTest extends TestCase
         $this->assertDatabaseMissing('tasks', ['id' => $task->id]);
 
         $response->assertRedirect('/');
-        $response->assertSessionHas('message', 'Task ' . $task->name . ' deleted successfully');
+        $response->assertSessionHas('message', 'Task '.$task->name.' deleted successfully');
     }
 
     public function test_it_updates_a_task(): void
@@ -58,7 +58,7 @@ class TaskTest extends TestCase
         $this->assertDatabaseHas('tasks', ['id' => $task->id, 'completed_at' => now()]);
 
         $response->assertRedirect('/');
-        $response->assertSessionHas('message', 'Task ' . $task->name . ' completed successfully');
+        $response->assertSessionHas('message', 'Task '.$task->name.' completed successfully');
     }
 
     public function test_store_validates_using_a_form_request(): void

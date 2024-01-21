@@ -2,10 +2,7 @@
 
 namespace Tests\Unit\FormRequest;
 
-use App\Http\Requests\StoreTaskRequest;
 use App\Http\Requests\UpdateTaskRequest;
-use Illuminate\Validation\Rules\Password;
-use JMac\Testing\Traits\AdditionalAssertions;
 use Tests\TestCase;
 
 class UpdateTaskRequestTest extends TestCase
@@ -22,7 +19,7 @@ class UpdateTaskRequestTest extends TestCase
     {
         $this->assertEquals(
             [
-                'is_completed' => ['required', 'boolean']
+                'is_completed' => ['required', 'boolean'],
             ],
             $this->updateTaskRequest->rules()
         );

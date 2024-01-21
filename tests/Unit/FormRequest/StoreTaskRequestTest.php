@@ -3,8 +3,6 @@
 namespace Tests\Unit\FormRequest;
 
 use App\Http\Requests\StoreTaskRequest;
-use Illuminate\Validation\Rules\Password;
-use JMac\Testing\Traits\AdditionalAssertions;
 use Tests\TestCase;
 
 class StoreTaskRequestTest extends TestCase
@@ -21,7 +19,7 @@ class StoreTaskRequestTest extends TestCase
     {
         $this->assertEquals(
             [
-                'name' => ['required', 'string', 'max:255']
+                'name' => ['required', 'string', 'max:255'],
             ],
             $this->storeTaskRequest->rules()
         );
