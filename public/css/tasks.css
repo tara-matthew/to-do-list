@@ -3,12 +3,15 @@ body {
 }
 
 table {
-    table-layout: fixed;
     color: grey;
 }
 
 tr {
     height: 5rem;
+}
+
+.card-body {
+    max-width: 40rem;
 }
 
 .container {
@@ -31,4 +34,16 @@ tr {
 
 .title-header {
     width: 95%;
+}
+
+.buttons-container {
+    width: 20%;
+}
+
+.card-body-count {
+    width: 5%;
+}
+
+.card-body-value {
+    width: 75%;
 }

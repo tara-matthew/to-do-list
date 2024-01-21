@@ -1,7 +1,8 @@
 @props(['task', 'key'])
 <tr>
-    <th class="text-center">{{ $key + 1 }}</th>
+    <th class="card-body-count text-center" class="text-center">{{ $key + 1 }}</th>
     <td
+        class="card-body-value"
         @style(['text-decoration: line-through' => $task->completed_at])
     >{{$task->name}}</td>
     <td
